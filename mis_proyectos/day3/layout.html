@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  /* Los elementos det tipo bloque usa todo el ancho d la pantalla, el elem inline solo ocupa el tamaño que el conlleve         */
+        .block{
+            display: block;
+            width: 250px;
+            height: 250px;
+            background-color: blue;
+
+        }
+ /* los elementos inline no aceptan las propiedades de ancho ya alto         */
+        .inline{
+            display: inline;
+            width: 250px;
+            height: 250px;
+            background-color: cadetblue;
+        }
+
+   /* son los dos anteriores con propiedaes en conjunto      */
+        .inlineblock{
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            position: relative;
+            left: 20vmin;
+            bottom: 30vmin;
+            background-color:cyan;
+        }
+        .absolute{
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            left: 20vmin;
+            bottom: 30vmin;
+            background-color: darkcyan;
+            z-index: -1;
+        }
+.abuelo{
+    border: 1px solid black;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+.padre{
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    position: absolute;
+}
+
+.hijo{
+
+    width: 50px;
+    height: 50px;
+    background-color: chocolate;
+    position: absolute;
+    left: 500px;
+}
+
+.padre:hover .hijo{
+    top: 200px;
+    right: 300px;
+    transition: top 4s, right 4s ease;
+}
+
+    </style>
+</head>
+<body>
+    <div class="block">Bloque</div>
+    <div class="inline">en linea</div>
+    <div class="inlineblock">bloque en linea</div>
+    <div class="absolute">absolute</div>
+
+<div class="abuelo">
+    <div class="padre">
+        <div class="hijo"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
